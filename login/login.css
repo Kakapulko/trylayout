@@ -1,0 +1,117 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    margin: 0;
+    min-height: 100vh;
+    background-image: url("pg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.container{
+    min-height: 100vh;
+    display: grid;
+    grid-template: "h h h"
+                    ". c ."
+                    "f f f";
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 90px 1fr 90px;
+}
+.form-container{
+    padding: 5%;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 420px;
+    justify-self: center;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow:
+            0 20px 60px rgba(0, 0, 0, 0.25),
+            inset 0 1px 0 rgba(255, 255, 255, 0.18);
+    border-radius: 22px;
+}
+.header {grid-area: h}
+.content {grid-area: c}
+.footer {grid-area: f}
+
+.content{
+    align-content: center;
+    text-align: center;
+}
+.h2{
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 30px;
+    color: rgba(0,0,0,0.8);
+}
+.form-container input,
+.form-container button {
+    width: 100%;
+    max-width: 100%;
+}
+.form-container * {
+    min-width: 0;
+}
+.input-text{
+    background: none;
+    border: none;
+    font-size: 25px;
+    border-bottom: 2px solid rgb(30, 47, 63);
+}
+.button{
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 16px;
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid rgb(30, 47, 63);
+    color: #bab9b9;
+    background-color: rgb(30, 47, 63);
+}
+.button:hover{
+    cursor: pointer;
+}
+.field {
+    position: relative;
+    width: 100%;
+    padding-top: 18px;
+}
+.field-input {
+    width: 100%;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.55);
+    padding: 12px 0 10px;
+    color: #0b1a24;
+    font-size: 16px;
+    outline: none;
+}
+
+.field-label {
+    position: absolute;
+    left: 0;
+    top: 28px;
+    transform-origin: left top;
+    color: rgba(0,0,0,0.6);
+    pointer-events: none;
+    transition: 0.2s ease;
+}
+.field-input:focus + .field-label,
+.field-input:not(:placeholder-shown) + .field-label {
+    top: 0;
+    transform: scale(0.82);
+    color: rgba(0,0,0,0.85);
+}
